@@ -1,0 +1,40 @@
+Q4. Write a Program to show Sum of three Integer adds to ZERO
+
+ANS-
+#! /bin/bash
+
+declare -a arr
+
+echo "Enter 5 nos:"
+read n1 n2 n3 n4 n5
+
+arr=( $n1 $n2 $n3 $n4 $n5 )
+echo "Array is:" ${arr[@]}
+n=5;
+
+for((i=0;i<$(($n-2));i++))
+do
+        for((j=$(($i+1));j<$(($n-1));j++))
+        do
+                for((k=$(($j+1));k<$n;k++))
+                do
+                        x=${arr[i]};
+                        y=${arr[j]};
+                        z=${arr[k]};
+
+                        if [ $(( $x + $y + $z )) == 0 ]
+                        then
+                                echo "sum of three no $x $y $z is zero"
+
+                        fi
+                done
+        done
+done
+
+
+OUTPUT--
+$ ./SumOf3.sh
+Enter 5 nos:
+0 2 0 1 0
+Array is: 0 2 0 1 0
+sum of three no 0 0 0 is zero
